@@ -1,0 +1,25 @@
+# Dev profile (default)
+server:
+  port: 8080
+
+greeting:
+  message: "Welcome to the DEV environment"
+
+---
+
+# Prod profile
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+server:
+  port: 80
+
+greeting:
+  message: "Welcome to my PROD environment"
+
+
+
+
+
