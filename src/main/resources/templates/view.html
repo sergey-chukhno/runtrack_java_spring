@@ -2,15 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Hello from Thymeleaf</title>
+    <title>Formulaire</title>
 </head>
 <body>
-<h1>Hello, visitor!</h1>
-<br/>
-<h2>
-    <ul>
-        <li th:each="message : ${messages}" th:text="${message}">Message from Thymeleaf</li>
-    </ul>
-</h2>
+<h1>Formulaire de bienvenue</h1>
+
+<form th:action="@{/welcome}" method="post">
+    <label for="name">Votre nom :</label>
+    <input type="text" id="name" name="name" required />
+    <button type="submit">Envoyer</button>
+</form>
+
+<!-- Display message only if it exists -->
+<p th:if="${message}" th:text="${message}">Message par défaut</p>
 </body>
 </html>
+
