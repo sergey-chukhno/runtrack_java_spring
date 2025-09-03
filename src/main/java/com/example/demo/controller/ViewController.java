@@ -4,11 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
+import java.util.List;
+
 @Controller
 public class ViewController {
-    @GetMapping("/message")
+
+    @GetMapping("/messages")
     public String sayMessage(Model model) {
-        model.addAttribute("message", "Hello, this is a message shown with Thymeleaf");
+        List<String> messages = List.of("Hello", "How are you?", "Have a nice day!");
+        model.addAttribute("messages", messages);
         return "view";
     }
 }

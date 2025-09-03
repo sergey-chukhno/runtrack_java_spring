@@ -5,6 +5,12 @@
     <title>Hello from Thymeleaf</title>
 </head>
 <body>
-<h1 th:text="${message}">Texte par défaut</h1>
+<h1>Hello, visitor!</h1>
+<br/>
+<h2>
+    <ul>
+        <li th:each="message : ${messages}" th:text="${message}">Message from Thymeleaf</li>
+    </ul>
+</h2>
 </body>
 </html>
