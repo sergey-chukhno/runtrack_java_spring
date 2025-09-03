@@ -2,19 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Formulaire</title>
+    <title>Formulaire de bienvenue</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
-<h1>Formulaire de bienvenue</h1>
+<div class="container">
+    <h1>Bienvenue</h1>
+    <form th:action="@{/welcome}" th:object="${userForm}" method="post">
+        <div class="form-row">
+            <input type="text" th:field="*{name}" placeholder="Nom"/>
+            <input type="number" th:field="*{age}" placeholder="Âge"/>
+        </div>
 
-<form th:action="@{/welcome}" method="post">
-    <label for="name">Votre nom :</label>
-    <input type="text" id="name" name="name" required />
-    <button type="submit">Envoyer</button>
-</form>
+        <div th:if="${#fields.hasErrors('*')}">
+            <p th:each="err : ${#fields.errors('*')}" th:text="${err}" style="color:red;"></p>
+        </div>
 
-<!-- Display message only if it exists -->
-<p th:if="${message}" th:text="${message}">Message par défaut</p>
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <div th:if="${message}" style="text-align:center; margin-top:20px; color:green;">
+        <p th:text="${message}"></p>
+    </div>
+</div>
 </body>
 </html>
+
 

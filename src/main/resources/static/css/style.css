@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    display: flex;
+    justify-content: center;  /* centers the form horizontally */
+    align-items: center;      /* centers vertically */
+    height: 100vh;            /* full viewport height */
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 500px;       /* controls form width */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Side-by-side inputs */
+.form-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* wraps on smaller screens */
+}
+
+input {
+    flex: 1;                   /* fills available space equally */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Fixed width button */
+button {
+    width: 125px;
+    padding: 12px;
+    margin-top: 30px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: center;   /* centers the button */
+}
+
+button:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
